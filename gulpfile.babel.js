@@ -33,7 +33,7 @@ gulp.task('build:html', () => {
 
 gulp.task('build:scss', () => {
     return gulp.src([
-        `${devDir}/**/*.scss`
+        `${devDir}/**/index.scss`
     ])
         .pipe($.plumber({
             errorHandler: function (error) {

@@ -1,11 +1,13 @@
 from flask import Blueprint,render_template
 import os
+import random
 
 main = Blueprint('main',__name__)
 
 @main.route('/')
 @main.route('/index')
 def index():
+    random_nr = random.randint(1,6)
     user = {'nickname': 'Katalonne'}  # fake user
     posts = [  # fake array of posts
         { 
@@ -21,4 +23,5 @@ def index():
                             title='Home',
                             user=user,
                             posts=posts,
-                            os=os)
+                            os=os,
+                            random_nr=random_nr)

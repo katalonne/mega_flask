@@ -1,21 +1,72 @@
 <!DOCTYPE HTML>
 <html lang="en-UK-US">
-  <head>
-    {% if title %}
-    <title>{{ title }} - microblog</title>
-    {% else %}
-    <title>Welcome to microblog</title>
-    {% endif %}
-    <link rel="stylesheet" href="/static/css/index/index.css">
-  </head>
-  <body>
-    <div>Microblog: <a href="/index">Home</a></div>
-    <hr>
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
-  </body>
+
+<head>
+  {% if title %}
+  <title>{{ title }} - microblog</title>
+  {% else %}
+  <title>Welcome to microblog</title>
+  {% endif %}
+  <link rel="stylesheet" href="/static/css/index/index.css">
+</head>
+
+<body>
+  <input type="radio" name="input_info" id="info_label">
+  <input type="radio" name="input_home" id="home_label">
+
+  <label for="info_label" class='info_label_class'></label>
+  <label for="home_label" class='home_label_class'></label>
+
+  <div id='main' style="background-image: url('/static/images/milky-way{{random_nr}}.jpg')">
+    <!--{{ random_nr }}-->
+    <div class='middle'>
+      <div class='logo'>
+      </div>
+
+      <div class='middle-box'>
+        <div class='blur-bg'></div>
+
+        <p class='name'>Catalin Besleaga</p>
+        <div class='developer-container'>
+          <p class='developer'>UI/UX & Frontend Developer</p>
+        </div>
+        <div class='iconci'>
+          <i class='fa fa-info info tooltips' aria-hidden="true">
+            <label for="info_label" class='info_label_class'></label>
+          </i>
+          <i class="fa fa-code code blog_tooltips" aria-hidden="true"></i>
+          <span class='about-tooltip'>About me</span>
+          <span class='blog-tooltip'>Coming soon</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class='about'>
+      <div class='profile_img'>
+        
+      </div>
+      <div class='about-text'>
+      <p class='who-am-i'>Who am I?</p>
+      <p class='about-me'>
+        I'm a young Front End Developer based in Moldova who focuses on writing clean, elegant and efficient code.
+      </p>
+      </div>
+
+      <div class='technologies'>
+        <p class='techno'>Technologies:</p>
+
+      </div>
+
+      <i class="fa fa-home home" aria-hidden="true">
+        <label for="home_label" class='home_label_class'></label>
+      </i>
+    </div>
+
+  </div>
+</body>
+
 </html>
 
 
