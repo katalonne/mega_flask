@@ -25,16 +25,18 @@
   <meta name="keywords" content="HTML,CSS,XML,JavaScript,CB,Developer,Frontend,Backend"> 
   <meta name="author" content="Catalin Besleaga"> 
   <link rel="stylesheet" href="/static/css/index/index.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 
 <body>
   <input type="checkbox" name="input_info" id="info_label">
 
-  <label for="info_label" class='info_label_class'></label>
-  <label for="info_label" class='home_label_class'></label>
+  <label for="info_label" class='info_label_class' onclick=""></label>
+  <label for="info_label" class='home_label_class' onclick=""></label>
 
 
-  <div id='main' style="background-image: url('/static/images/bg-image12.jpg')">
+  <div id='main' style="background-image: url('/static/images/bg-image{{random_nr}}.jpg')">
   <!--{{random_nr}}-->
     <div class='middle'>
       <div class='logo'>
@@ -49,7 +51,7 @@
         </div>
         <div class='iconci'>
           <i class='fa fa-info info tooltips' aria-hidden="true">
-            <label for="info_label" class='info_label_class'></label>
+            <label for="info_label" class='info_label_class' onclick=""></label>
           </i>
           <i class="fa fa-code code blog_tooltips" aria-hidden="true"></i>
           <span class='about-tooltip'>About me</span>
@@ -76,7 +78,7 @@
 
         <div class='technologies-container'>
           <p class='techno-header'>Technologies:</p>
-          <div class='techno-imgs'>
+          <div class='techno-imgs-row'>
             <div class='technology-img-container'>
               <img src="/static/images/techno/html5.png" alt="html5">
             </div>
@@ -93,7 +95,7 @@
         </div>
 
         <i class="fa fa-home home" aria-hidden="true">
-        <label for="info_label" class='home_label_class'></label>
+        <label for="info_label" class='home_label_class' onclick=""></label>
       </i>
       </div>
 

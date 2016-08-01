@@ -17,6 +17,11 @@ input {
     display: none;
 }
 
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+
 //////////////////
 #info_label:checked~ #main .middle .middle-box {
     -webkit-animation: hide_middle_box 800ms 50ms both;
@@ -87,6 +92,7 @@ input {
         margin-bottom: -60vh;
         // border:1px solid red;
         background-color: rgba(255, 255, 255, 0.7);
+        z-index:99;
         &:after {
             -webkit-transition: opacity 1.5s ease;
             -moz-transition: opacity 1.5s ease;
@@ -101,16 +107,20 @@ input {
             width: 140px;
             height: 140px;
             border-radius: 100%;
-            box-shadow: 0px 0px 0px 0px #E3DFD2;
-            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0px 0px 1px 0px #E3DFD2;
+            background-color: rgba(255, 255, 255, 0.15);
             z-index: 1;
         }
         .about-middle {
-            // border:1px solid red;
-            margin-top: -50px;
+            position:absolute;
+            width:inherit;
+            border:1px solid red;
+            // margin-top: -0px;
+            top:0;
+            padding-top:75px;
             overflow-y:auto;
-            // overflow-x:hidden;
-            height:45vh;
+            overflow-x:hidden;
+            height:inherit;
             .about-text {
                 // border:1px solid red;
                 width: 600px;
@@ -129,8 +139,9 @@ input {
                 }
             }
             .technologies-container {
-                // border:1px solid red;
+                border:1px solid red;
                 width: $technologies-container-width-base;
+                height: calc( #{$technology-img-height} + 65px);
                 margin: 0 auto;
                 margin-top: 15px;
                 font-family: 'Exo', sans-serif;
@@ -141,7 +152,7 @@ input {
                     font-size: 30px;
                     font-weight: 500;
                 }
-                .techno-imgs {
+                .techno-imgs-row {
                     width: 100%;
                     padding-top: 10px;
                     // padding-bottom: 15px;
@@ -181,10 +192,12 @@ input {
                 font-size: 50px;
                 bottom: 60vh;
                 transform: translateY(100%);
-                left: 2px;
+                left: 3px;
                 // transform: translate(-50%, 0);
                 transition: 0.2s;
                 transition-timing-function: linear;
+                    cursor:pointer;
+                
                 &:hover {
                     color: #fff;
                     
@@ -193,7 +206,7 @@ input {
                 .home_label_class {
                     position: absolute;
                     bottom: 0;
-                    left: -2px;
+                    left: -1px;
                     width: 50px;
                     height: 50px;
                     // border:1px solid red;
@@ -232,7 +245,7 @@ input {
         // border:1px solid red;
         .logo {
             // opacity: 0.2;
-            background: url('/static/images/logo.png');
+            background: url('/static/images/logo_5.png');
             // z-index:-1;
             background-repeat: no-repeat;
             background-position: center;
@@ -326,7 +339,7 @@ input {
                     height: 35px;
                     border: 2px solid rgba(255, 255, 255, 0.75);
                     border-radius: 50%;
-                    // cursor:pointer;
+                    cursor:pointer;
                     transition:  0.2s;
                     transition-timing-function: ease;
                     

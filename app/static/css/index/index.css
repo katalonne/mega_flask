@@ -3616,6 +3616,14 @@ input {
   display: none;
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
 #info_label:checked ~ #main .middle .middle-box {
   -webkit-animation: hide_middle_box 800ms 50ms both;
   animation: hide_middle_box 800ms 50ms both;
@@ -3672,6 +3680,7 @@ input {
   height: 60vh;
   margin-bottom: -60vh;
   background-color: rgba(255, 255, 255, 0.7);
+  z-index: 99;
 }
 
 #main .about:after {
@@ -3689,16 +3698,21 @@ input {
   height: 140px;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  -webkit-box-shadow: 0px 0px 0px 0px #E3DFD2;
-  box-shadow: 0px 0px 0px 0px #E3DFD2;
-  background-color: white;
+  -webkit-box-shadow: 0px 0px 1px 0px #E3DFD2;
+  box-shadow: 0px 0px 1px 0px #E3DFD2;
+  background-color: rgba(255, 255, 255, 0.15);
   z-index: 1;
 }
 
 #main .about .about-middle {
-  margin-top: -50px;
+  position: absolute;
+  width: inherit;
+  border: 1px solid red;
+  top: 0;
+  padding-top: 75px;
   overflow-y: auto;
-  height: 45vh;
+  overflow-x: hidden;
+  height: inherit;
 }
 
 #main .about .about-middle .about-text {
@@ -3720,7 +3734,10 @@ input {
 }
 
 #main .about .about-middle .technologies-container {
+  border: 1px solid red;
   width: 600px;
+  height: -webkit-calc( 90px + 65px);
+  height: calc( 90px + 65px);
   margin: 0 auto;
   margin-top: 15px;
   font-family: 'Exo', sans-serif;
@@ -3734,13 +3751,13 @@ input {
   font-weight: 500;
 }
 
-#main .about .about-middle .technologies-container .techno-imgs {
+#main .about .about-middle .technologies-container .techno-imgs-row {
   width: 100%;
   padding-top: 10px;
   margin-top: 10px;
 }
 
-#main .about .about-middle .technologies-container .techno-imgs .technology-img-container {
+#main .about .about-middle .technologies-container .techno-imgs-row .technology-img-container {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -3748,7 +3765,7 @@ input {
   width: 90px;
 }
 
-#main .about .about-middle .technologies-container .techno-imgs .technology-img-container:nth-of-type(n) img {
+#main .about .about-middle .technologies-container .techno-imgs-row .technology-img-container:nth-of-type(n) img {
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -3757,12 +3774,12 @@ input {
   height: 90px;
 }
 
-#main .about .about-middle .technologies-container .techno-imgs .technology-img-container:nth-of-type(1) {
+#main .about .about-middle .technologies-container .techno-imgs-row .technology-img-container:nth-of-type(1) {
   margin-left: -webkit-calc( (600px - 4*90px) / 5 - 2px);
   margin-left: calc( (600px - 4*90px) / 5 - 2px);
 }
 
-#main .about .about-middle .technologies-container .techno-imgs .technology-img-container:nth-of-type(-n+3) {
+#main .about .about-middle .technologies-container .techno-imgs-row .technology-img-container:nth-of-type(-n+3) {
   margin-right: -webkit-calc( (600px - 4*90px) / 5);
   margin-right: calc( (600px - 4*90px) / 5);
 }
@@ -3774,11 +3791,12 @@ input {
   -webkit-transform: translateY(100%);
   -ms-transform: translateY(100%);
   transform: translateY(100%);
-  left: 2px;
+  left: 3px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
+  cursor: pointer;
 }
 
 #main .about .about-middle .home:hover {
@@ -3788,7 +3806,7 @@ input {
 #main .about .about-middle .home .home_label_class {
   position: absolute;
   bottom: 0;
-  left: -2px;
+  left: -1px;
   width: 50px;
   height: 50px;
   -webkit-border-radius: 50%;
@@ -3826,7 +3844,7 @@ input {
 }
 
 #main .middle .logo {
-  background: url("/static/images/logo.png");
+  background: url("/static/images/logo_5.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 123px;
@@ -3918,6 +3936,7 @@ input {
   border: 2px solid rgba(255, 255, 255, 0.75);
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-transition-timing-function: ease;
