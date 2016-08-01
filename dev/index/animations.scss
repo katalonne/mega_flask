@@ -1,14 +1,32 @@
+@-webkit-keyframes spin3d {
+    from {
+        -webkit-transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+@keyframes spin3d {
+    from {
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    to {
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
 @keyframes spin {
     0% {
         transform: translate(-50%, -400%) rotate(0deg);
     }
-    25%{
-    }
-    75%{
-    }
-    80%{
-        
-    }
+    25% {}
+    75% {}
+    80% {}
     100% {
         transform: translate(-50%, -50%) rotate(1080deg);
     }

@@ -32,20 +32,24 @@ input {
     }
 }
 
-#info_label:checked~ #main .about {
+#info_label:checked ~ #main .about {
     margin-bottom: 0;
     & .profile_img {
         opacity: 1;
-        // -webkit-animation: spin 800ms 250ms 5 both;
-        // -moz-animation: spin 800ms 250ms 5 both;
-        // -ms-animation: spin 800ms 250ms 5 both;
-        // -o-animation: spin 800ms 250ms 5 both;
-        animation: spin 800ms 250ms 1 both;
+        -webkit-animation: spin 800ms 150ms 1 both;
+        -moz-animation: spin 800ms 150ms 1 both;
+        -ms-animation: spin 800ms 150ms 1 both;
+        -o-animation: spin 800ms 150ms 1 both;
+        animation: spin 800ms 150ms 1 both;
     }
     &:after {
         opacity: 1;
     }
 }
+
+// .info_label_class:hover ~ #main .middle .middle-box .iconci .info {
+//     border:1px solid red;
+// }
 
 ///////////////////////////
 #info_label:not(checked)~ #main .about {
@@ -102,7 +106,7 @@ input {
             z-index: 1;
         }
         .about-middle {
-            border:1px solid red;
+            // border:1px solid red;
             margin-top: -50px;
             overflow-y:auto;
             // overflow-x:hidden;
@@ -140,14 +144,14 @@ input {
                 .techno-imgs {
                     width: 100%;
                     padding-top: 10px;
-                    padding-bottom: 15px;
+                    // padding-bottom: 15px;
                     margin-top: 10px;
                     // height:50px;
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     .technology-img-container {
                         position: relative;
                         display: inline-block;
-                        border: 1px solid red;
+                        // border: 1px solid red;
                         vertical-align: middle;
                         padding: 0;
                         // font-size:0;
@@ -177,12 +181,14 @@ input {
                 font-size: 50px;
                 bottom: 60vh;
                 transform: translateY(100%);
-                left: 0;
+                left: 2px;
                 // transform: translate(-50%, 0);
                 transition: 0.2s;
                 transition-timing-function: linear;
                 &:hover {
                     color: #fff;
+                    
+                    
                 }
                 .home_label_class {
                     position: absolute;
@@ -225,7 +231,9 @@ input {
         height: 100%;
         // border:1px solid red;
         .logo {
-            background-image: url('/static/images/logo.png');
+            // opacity: 0.2;
+            background: url('/static/images/logo.png');
+            // z-index:-1;
             background-repeat: no-repeat;
             background-position: center;
             background-size: auto 123px;
@@ -257,7 +265,7 @@ input {
                 bottom: -10px;
                 left: -10px;
                 filter: blur(10px);
-                z-index: -1;
+                z-index: 0;
                 // width:100%;
                 // width:10px;
                 // background-color:green;
@@ -319,8 +327,9 @@ input {
                     border: 2px solid rgba(255, 255, 255, 0.75);
                     border-radius: 50%;
                     // cursor:pointer;
-                    transition: 0.2s;
+                    transition:  0.2s;
                     transition-timing-function: ease;
+                    
                     -webkit-animation: info 500ms 1200ms both;
                     -moz-animation: info 500ms 1200ms both;
                     -ms-animation: info 500ms 1200ms both;
@@ -329,6 +338,17 @@ input {
                     &:hover {
                         color: rgba(255, 255, 255, 1);
                         border: 2px solid rgba(255, 255, 255, 1);
+                        
+                        
+                        // transform: rotateY(360deg);
+                        
+                        transform: translate(-500%);
+                        
+                        // -webkit-animation: spin3d 800ms 250ms both;
+                        // -moz-animation: spin3d 800ms 250ms both;
+                        // -ms-animation: spin3d 800ms 250ms both;
+                        // -o-animation: spin3d 800ms 250ms both;
+                        // animation: spin3d 800ms 250ms both;
                     }
                     .info_label_class {
                         position: absolute;
@@ -340,6 +360,9 @@ input {
                         // transform: translate(-50%,0);
                         // border:1px solid #fff;
                         border-radius: 50%;
+                        // &:hover{
+                            // border:1px solid red;
+                        // }
                     }
                 }
                 .code {
