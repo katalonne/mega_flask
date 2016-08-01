@@ -11,14 +11,13 @@
 </head>
 
 <body>
-  <input type="radio" name="input_info" id="info_label">
-  <input type="radio" name="input_home" id="home_label">
+  <input type="checkbox" name="input_info" id="info_label">
 
   <label for="info_label" class='info_label_class'></label>
-  <label for="home_label" class='home_label_class'></label>
+  <label for="info_label" class='home_label_class'></label>
 
-  <div id='main' style="background-image: url('/static/images/milky-way{{random_nr}}.jpg')">
-    <!--{{ random_nr }}-->
+
+  <div id='main' style="background-image: url('/static/images/bg-image{{random_nr}}.jpg')">
     <div class='middle'>
       <div class='logo'>
       </div>
@@ -45,22 +44,38 @@
 
     <div class='about'>
       <div class='profile_img'>
-        
       </div>
+      <div class='blank_circle'>
+      </div>
+      
+      <div class='about-middle'>
       <div class='about-text'>
-      <p class='who-am-i'>Who am I?</p>
-      <p class='about-me'>
-        I'm a young Front End Developer based in Moldova who focuses on writing clean, elegant and efficient code.
-      </p>
+        <p class='who-am-i'>Who am I?</p>
+        <p class='about-me'>
+          I'm a young Front End Developer based in Moldova who focuses on writing clean, elegant and efficient code.
+        </p>
       </div>
 
-      <div class='technologies'>
-        <p class='techno'>Technologies:</p>
-
+      <div class='technologies-container'>
+        <p class='techno-header'>Technologies:</p>
+        <div class='techno-imgs'>
+          <div class='technology-img-container'>
+            <img src="/static/images/techno/html5.png" alt="html5">
+          </div>
+          <div class='technology-img-container'>
+            <img src="/static/images/techno/css3.png" alt="css3">
+          </div>
+          <div class='technology-img-container'>
+            <img src="/static/images/techno/angularJS.png" alt="angularJS">
+          </div>
+          <div class='technology-img-container'>
+            <img src="/static/images/techno/angular2.png" alt="angular2">
+          </div>
+        </div>
       </div>
-
+      
       <i class="fa fa-home home" aria-hidden="true">
-        <label for="home_label" class='home_label_class'></label>
+        <label for="info_label" class='home_label_class'></label>
       </i>
     </div>
 
