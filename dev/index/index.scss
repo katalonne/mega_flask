@@ -1,9 +1,14 @@
 @import 'normalize';
 @import 'font-awesome';
+@import 'animations';
 @import 'about-tooltips';
 @import 'blog-tooltips';
-@import 'animations';
 @import 'variables';
+@import 'media-max-h762';
+@import 'media-max-h600';
+@import 'media-max-h479';
+@import 'media-max-w605';
+@import 'media-max-w330';
 @import url(https://fonts.googleapis.com/css?family=Exo:400,300,500);
 *,
 *::after,
@@ -13,22 +18,47 @@
     padding: 0;
 }
 
+.row{
+    margin:0;
+}
+
 input {
     display: none;
 }
 
-@-ms-viewport { width: device-width; }
-@-o-viewport { width: device-width; }
-@viewport { width: device-width; }
+@-ms-viewport {
+    width: device-width;
+}
 
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+::-webkit-scrollbar {
+    width: $scrollbar-width-base;
+    /* for vertical scrollbars */
+    //   height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+}
 
 //////////////////
 #info_label:checked~ #main .middle .middle-box {
-    -webkit-animation: hide_middle_box 800ms 50ms both;
-    -moz-animation: hide_middle_box 800ms 50ms both;
-    -ms-animation: hide_middle_box 800ms 50ms both;
-    -o-animation: hide_middle_box 800ms 50ms both;
-    animation: hide_middle_box 800ms 50ms both;
+    -webkit-animation: hide 800ms 50ms both;
+    -moz-animation: hide 800ms 50ms both;
+    -ms-animation: hide 800ms 50ms both;
+    -o-animation: hide 800ms 50ms both;
+    animation: hide 800ms 50ms both;
     & .iconci .info_label_class {
         cursor: default;
     }
@@ -36,6 +66,16 @@ input {
         cursor: default;
     }
 }
+
+#info_label:not(checked)~ #main .middle .middle-box {
+    -webkit-animation: show 800ms 250ms both;
+    -moz-animation: show 800ms 250ms both;
+    -ms-animation: show 800ms 250ms both;
+    -o-animation: show 800ms 250ms both;
+    animation: show 800ms 250ms both;
+}
+
+
 
 #info_label:checked ~ #main .about {
     margin-bottom: 0;
@@ -52,30 +92,41 @@ input {
     }
 }
 
-// .info_label_class:hover ~ #main .middle .middle-box .iconci .info {
-//     border:1px solid red;
-// }
-
-///////////////////////////
-#info_label:not(checked)~ #main .about {
+#info_label:not(checked) ~ #main .about {
     margin-bottom: -60vh;
 }
 
-#info_label:not(checked)~ #main .middle .middle-box {
-    -webkit-animation: show_middle_box 800ms 250ms both;
-    -moz-animation: show_middle_box 800ms 250ms both;
-    -ms-animation: show_middle_box 800ms 250ms both;
-    -o-animation: show_middle_box 800ms 250ms both;
-    animation: show_middle_box 800ms 250ms both;
-}
+// .info_label_class:hover ~ #main .middle .middle-box .iconci .info {
+//     border:1px solid red;
+// }
+///////////////////////////
+
+
+
 
 ////////////////////////////
+#info_label:checked~ #main .about .about-middle .home {
+    -webkit-animation: position_fixed 600ms 1150ms both;
+    -moz-animation: position_fixed 600ms 1150ms both;
+    -ms-animation: position_fixed 600ms 1150ms both;
+    -o-animation: position_fixed 600ms 1150ms both;
+    animation: position_fixed 600ms 1150ms both;
+    // position:fixed;
+    // transition-delay:1s;
+}
+
+#info_label:not(checked)~ #main .about .about-middle .home {
+
+}
+
+///////////////////////////
 #main {
     height: 100vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    // background-size: 100%;
     position: relative;
     display: table;
     overflow: hidden;
@@ -89,10 +140,10 @@ input {
         bottom: 0;
         width: 100%;
         height: 60vh;
-        margin-bottom: -60vh;
+        // margin-bottom: -60vh;
         // border:1px solid red;
         background-color: rgba(255, 255, 255, 0.7);
-        z-index:99;
+        z-index: 99;
         &:after {
             -webkit-transition: opacity 1.5s ease;
             -moz-transition: opacity 1.5s ease;
@@ -112,17 +163,17 @@ input {
             z-index: 1;
         }
         .about-middle {
-            position:absolute;
-            width:inherit;
-            border:1px solid red;
+            position: absolute;
+            width: inherit;
+            // border: 1px solid red;
             // margin-top: -0px;
-            top:0;
-            padding-top:75px;
-            overflow-y:auto;
-            overflow-x:hidden;
-            height:inherit;
+            top: 0;
+            padding-top: 75px;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            height: inherit;
             .about-text {
-                // border:1px solid red;
+                border:1px solid red;
                 width: 600px;
                 margin: 0 auto;
                 font-family: 'Exo', sans-serif;
@@ -139,12 +190,13 @@ input {
                 }
             }
             .technologies-container {
-                border:1px solid red;
+                border: 1px solid red;
                 width: $technologies-container-width-base;
-                height: calc( #{$technology-img-height} + 65px);
+                height: calc( #{$technology-img-height}*2+ 10px + 10px+ 65px + 15px);
                 margin: 0 auto;
                 margin-top: 15px;
                 font-family: 'Exo', sans-serif;
+                // height:100%;
                 font-size: 0;
                 .techno-header {
                     text-align: center;
@@ -159,6 +211,10 @@ input {
                     margin-top: 10px;
                     // height:50px;
                     // border: 1px solid red;
+                    &:nth-of-type(2) {
+                        margin-top: 20px;
+                        padding-bottom:10px;
+                    }
                     .technology-img-container {
                         position: relative;
                         display: inline-block;
@@ -169,7 +225,9 @@ input {
                         width: $technology-img-container-width;
                         // left:50%;
                         // margin:0 auto;
+                        // opacity:0.4;
                         &:nth-of-type(n) img {
+                            opacity: 0.9;
                             position: relative;
                             left: 50%;
                             transform: translateX(-50%);
@@ -179,7 +237,7 @@ input {
                             margin-left: calc( (#{$technologies-container-width-base} - 4*#{$technology-img-container-width}) / 5 - 2px);
                         }
                         &:nth-of-type(4n) {
-                            // margin-right: calc( (#{$technologies-container-width-base} - 4*#{$technology-img-container-width}) / 5 - 2px );      
+                            margin-right: calc( (#{$technologies-container-width-base} - 4*#{$technology-img-container-width}) / 5 - 2px );      
                         }
                         &:nth-of-type(-n+3) {
                             margin-right: calc( (#{$technologies-container-width-base} - 4*#{$technology-img-container-width}) / 5);
@@ -192,21 +250,21 @@ input {
                 font-size: 50px;
                 bottom: 60vh;
                 transform: translateY(100%);
-                left: 3px;
-                // transform: translate(-50%, 0);
-                transition: 0.2s;
+                // left:0;
+                // top:0;
+                // right: -12px;
+                transition: color 0.2s, position 1050ms;
                 transition-timing-function: linear;
-                    cursor:pointer;
-                
+                color: rgba(0, 0, 0, 0.5);
+                cursor: pointer;
                 &:hover {
-                    color: #fff;
-                    
-                    
+                    color: rgba(0, 0, 0, 0.75);
+                    ;
                 }
                 .home_label_class {
                     position: absolute;
                     bottom: 0;
-                    left: -1px;
+                    left: -5px;
                     width: 50px;
                     height: 50px;
                     // border:1px solid red;
@@ -260,10 +318,7 @@ input {
             animation: logo 1000ms 800ms both;
         }
         .middle-box {
-            // -webkit-transition: visibility 2s ease;
-            // -moz-transition: visibility 2s ease;
-            // -o-transition: visibility 2s ease;
-            // transition: visibility 2s ease;
+            
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
@@ -339,10 +394,9 @@ input {
                     height: 35px;
                     border: 2px solid rgba(255, 255, 255, 0.75);
                     border-radius: 50%;
-                    cursor:pointer;
-                    transition:  0.2s;
+                    cursor: pointer;
+                    transition: 0.2s;
                     transition-timing-function: ease;
-                    
                     -webkit-animation: info 500ms 1200ms both;
                     -moz-animation: info 500ms 1200ms both;
                     -ms-animation: info 500ms 1200ms both;
@@ -351,12 +405,8 @@ input {
                     &:hover {
                         color: rgba(255, 255, 255, 1);
                         border: 2px solid rgba(255, 255, 255, 1);
-                        
-                        
                         // transform: rotateY(360deg);
-                        
                         transform: translate(-500%);
-                        
                         // -webkit-animation: spin3d 800ms 250ms both;
                         // -moz-animation: spin3d 800ms 250ms both;
                         // -ms-animation: spin3d 800ms 250ms both;
@@ -374,7 +424,7 @@ input {
                         // border:1px solid #fff;
                         border-radius: 50%;
                         // &:hover{
-                            // border:1px solid red;
+                        // border:1px solid red;
                         // }
                     }
                 }

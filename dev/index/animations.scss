@@ -1,3 +1,15 @@
+@keyframes position_fixed {
+    from {
+        postion:absolute;
+        opacity:0;
+    }
+    to {
+        position:fixed;
+        opacity:1;
+    }
+}
+
+
 @-webkit-keyframes spin3d {
     from {
         -webkit-transform: rotateY(0deg);
@@ -117,7 +129,7 @@
     }
 }
 
-@keyframes hide_middle_box {
+@keyframes hide {
     0% {
         opacity: 1;
     }
@@ -126,7 +138,7 @@
     }
 }
 
-@keyframes show_middle_box {
+@keyframes show {
     0% {
         opacity: 0;
     }
