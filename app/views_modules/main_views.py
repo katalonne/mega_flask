@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template,request
 import os
 import random
 
@@ -7,6 +7,7 @@ main = Blueprint('main',__name__)
 @main.route('/')
 @main.route('/index')
 def index():
+    print('request geaders ; ' + request.headers.get('User-Agent'))
     random_nr = random.randint(1,12)
     user = {'nickname': 'Katalonne'}  # fake user
     posts = [  # fake array of posts

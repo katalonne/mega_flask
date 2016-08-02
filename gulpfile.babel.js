@@ -27,7 +27,9 @@ gulp.task('build:html', () => {
         `${devDir}/**/*.html`
     ], {
 
-        }).pipe(gulp.dest(`${appDir}/static/html/`))
+        })
+        .pipe($.htmlmin({collapseWhitespace:true}))
+        .pipe(gulp.dest(`${appDir}/static/html/`))
         .pipe(browserSync.reload({ stream: true }));
 })
 
@@ -42,10 +44,21 @@ gulp.task('build:scss', () => {
             }
         }))
         .pipe($.sass({ outputStyle: 'expanded' }))
+        .pipe($.shorthand())
         .pipe($.autoprefixer({
-            browsers: ['last 10 versions'],
+            browsers: [
+                'Android 2.3',
+                'Android >= 4',
+                'Chrome >= 20',
+                'Firefox >= 24', // Firefox 24 is the latest ESR
+                'Explorer >= 8',
+                'iOS >= 6',
+                'Opera >= 12',
+                'Safari >= 6'
+            ],
             cascade: false
         }))
+        // .pipe($.csso())
         .pipe(gulp.dest(`${appDir}/static/css/`))
         .pipe(browserSync.reload({ stream: true }));
 })
@@ -60,7 +73,7 @@ gulp.task('build:scss', () => {
 // })
 
 
-gulp.task('Run:Python:Server',['build:html', 'build:scss'],()=>{
+gulp.task('Run:Python:Server', ['build:html', 'build:scss'], () => {
     return cp.exec('python run.py');
 });
 
@@ -80,6 +93,6 @@ gulp.task('serve', ['Run:Python:Server'], () => {
 
 
 
-gulp.task('default',['serve'], () => {
+gulp.task('default', ['serve'], () => {
 
 })

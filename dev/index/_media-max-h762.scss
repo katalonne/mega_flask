@@ -6,14 +6,17 @@
         & .iconci .code {}
     }
     #info_label:checked~ #main .about {
-        margin-bottom:0 !important;
+        // margin-bottom:0 !important;
+        transform: translateY(0%);
+        
         & .profile_img {}
         &:after {}
     }
     .info_label_class:hover~ #main .middle .middle-box .iconci .info {}
     ///////////////////////////
     #info_label:not(checked) ~ #main .about {
-            margin-bottom:-80vh !important;
+        transform: translateY(100%);
+        // margin-bottom:-80vh !important;
             
     }
     #info_label:not(checked)~ #main .middle .middle-box {}
@@ -41,7 +44,7 @@
     
     #main {
         .about {
-            border:1px solid red;
+            // border:1px solid red;
             height: 80vh !important;
             // margin-bottom: -80vh !important;
             &:after {}

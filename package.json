@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"gulp"
+    "start": "gulp"
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +16,13 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-browserify": "^0.5.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^2.0.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^2.3.2",
+    "gulp-shorthand": "^1.1.0",
     "gulp-util": "^3.0.7"
   }
 }

@@ -16,6 +16,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    // transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
 }
 
 .row{
@@ -41,7 +43,6 @@ input {
 ::-webkit-scrollbar {
     width: $scrollbar-width-base;
     /* for vertical scrollbars */
-    //   height: 12px; /* for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-track {
@@ -78,7 +79,9 @@ input {
 
 
 #info_label:checked ~ #main .about {
-    margin-bottom: 0;
+    // margin-bottom: 0;
+    transform: translateY(0%);
+    
     & .profile_img {
         opacity: 1;
         -webkit-animation: spin 800ms 150ms 1 both;
@@ -93,7 +96,8 @@ input {
 }
 
 #info_label:not(checked) ~ #main .about {
-    margin-bottom: -60vh;
+    transform: translateY(100%);
+    // margin-bottom: -60vh;
 }
 
 // .info_label_class:hover ~ #main .middle .middle-box .iconci .info {
@@ -132,10 +136,10 @@ input {
     overflow: hidden;
     // background-color:red;
     .about {
-        -webkit-transition: margin-bottom 1.5s ease;
-        -moz-transition: margin-bottom 1.5s ease;
-        -o-transition: margin-bottom 1.5s ease;
-        transition: margin-bottom 1.5s ease;
+        -webkit-transition: transform 1.5s ease;
+        -moz-transition: transform 1.5s ease;
+        -o-transition: transform 1.5s ease;
+        transition: transform 1.5s ease;
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -173,7 +177,7 @@ input {
             overflow-x: hidden;
             height: inherit;
             .about-text {
-                border:1px solid red;
+                // border:1px solid red;
                 width: 600px;
                 margin: 0 auto;
                 font-family: 'Exo', sans-serif;
@@ -190,7 +194,7 @@ input {
                 }
             }
             .technologies-container {
-                border: 1px solid red;
+                // border: 1px solid red;
                 width: $technologies-container-width-base;
                 height: calc( #{$technology-img-height}*2+ 10px + 10px+ 65px + 15px);
                 margin: 0 auto;
@@ -402,6 +406,8 @@ input {
                     -ms-animation: info 500ms 1200ms both;
                     -o-animation: info 500ms 1200ms both;
                     animation: info 500ms 1200ms both;
+
+                    z-index:1;
                     &:hover {
                         color: rgba(255, 255, 255, 1);
                         border: 2px solid rgba(255, 255, 255, 1);
@@ -423,6 +429,7 @@ input {
                         // transform: translate(-50%,0);
                         // border:1px solid #fff;
                         border-radius: 50%;
+                        z-index:2;
                         // &:hover{
                         // border:1px solid red;
                         // }
