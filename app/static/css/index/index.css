@@ -4193,9 +4193,9 @@ input {
 }
 
 #info_label:checked ~ #main .home {
-  -webkit-animation: position_fixed 600ms 1150ms both;
-  -o-animation: position_fixed 600ms 1150ms both;
-  animation: position_fixed 600ms 1150ms both;
+  -webkit-animation: position_fixed 600ms 750ms both;
+  -o-animation: position_fixed 600ms 750ms both;
+  animation: position_fixed 600ms 750ms both;
   bottom: 60vh;
 }
 
@@ -4254,7 +4254,8 @@ input {
   background-size: cover;
   position: relative;
   display: table;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 #main .home {
@@ -4274,10 +4275,6 @@ input {
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 110;
-}
-
-#main .home:hover {
-  color: rgba(0, 0, 0, 0.75);
 }
 
 #main .home .home_label_class {
@@ -4308,10 +4305,6 @@ input {
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   z-index: 110;
-}
-
-#main .close_contact:hover {
-  color: rgba(255, 255, 255, 0.9);
 }
 
 #main .close_contact .contact_label_class {
@@ -4469,13 +4462,13 @@ input {
 
 #main .about {
   background: rgba(255, 255, 255, 0.7);
-  -webkit-transition: transform 1.5s ease;
-  -o-transition: transform 1.5s ease;
-  -webkit-transition: -webkit-transform 1.5s ease;
-  transition: -webkit-transform 1.5s ease;
-  -o-transition: transform 1.5s ease, -o-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease, -o-transform 1.5s ease;
+  -webkit-transition: transform 1.0s ease;
+  -o-transition: transform 1.0s ease;
+  -webkit-transition: -webkit-transform 1.0s ease;
+  transition: -webkit-transform 1.0s ease;
+  -o-transition: transform 1.0s ease, -o-transform 1.0s ease;
+  transition: transform 1.0s ease;
+  transition: transform 1.0s ease, -webkit-transform 1.0s ease, -o-transform 1.0s ease;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -4511,7 +4504,7 @@ input {
   cursor: default;
   top: 0;
   padding-top: 75px;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   height: inherit;
 }

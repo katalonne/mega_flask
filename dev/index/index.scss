@@ -127,11 +127,11 @@ input {
 ///////////////////////////
 ////////////////////////////
 #info_label:checked~ #main .home {
-    -webkit-animation: position_fixed 600ms 1150ms both;
-    -moz-animation: position_fixed 600ms 1150ms both;
-    -ms-animation: position_fixed 600ms 1150ms both;
-    -o-animation: position_fixed 600ms 1150ms both;
-    animation: position_fixed 600ms 1150ms both;
+    -webkit-animation: position_fixed 600ms 750ms both;
+    -moz-animation: position_fixed 600ms 750ms both;
+    -ms-animation: position_fixed 600ms 750ms both;
+    -o-animation: position_fixed 600ms 750ms both;
+    animation: position_fixed 600ms 750ms both;
     // border:1px solid red;
     // transition-delay:1s;
     // margin-bottom:10vh;
@@ -198,7 +198,8 @@ input {
     // background-size: 100%;
     position: relative;
     display: table;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
     // background-color:red;
     .home {
         position: absolute;
@@ -211,8 +212,7 @@ input {
         cursor: pointer;
         z-index: 110;
         &:hover {
-            color: rgba(0, 0, 0, 0.75);
-            ;
+            // color: rgba(0, 0, 0, 0.75);
         }
         .home_label_class {
             position: absolute;
@@ -237,8 +237,7 @@ input {
         cursor: pointer;
         z-index: 110;
         &:hover {
-            color: rgba(255, 255, 255, 0.9);;
-            ;
+            // color: rgba(255, 255, 255, 0.9);
         }
         .contact_label_class {
             position: absolute;
@@ -392,10 +391,10 @@ input {
         }
     }
     .about {
-        -webkit-transition: transform 1.5s ease;
-        -moz-transition: transform 1.5s ease;
-        -o-transition: transform 1.5s ease;
-        transition: transform 1.5s ease;
+        -webkit-transition: transform 1.0s ease;
+        -moz-transition: transform 1.0s ease;
+        -o-transition: transform 1.0s ease;
+        transition: transform 1.0s ease;
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -430,7 +429,7 @@ input {
             cursor: default;
             top: 0;
             padding-top: 75px;
-            overflow-y: hidden;
+            overflow-y: auto;
             overflow-x: hidden;
             height: inherit;
             .about-text {

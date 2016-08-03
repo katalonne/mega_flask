@@ -10,8 +10,12 @@ main = Blueprint('main',__name__)
 def index():
     print('request geaders ; ' + request.headers.get('User-Agent'))
     user_agent = request.headers.get('User-Agent')
-    mobile = bool(re.search(r"iPhone", user_agent))
-    print(str(mobile))
+    iPhone = bool(re.search(r"iPhone", user_agent))
+    Android = bool(re.search(r"Android", user_agent))
+    iPad = bool(re.search(r"iPad", user_agent))
+    Windows_Phone = bool(re.search(r"Windows Phone", user_agent))
+    mobile = iPhone or Android or iPad or Windows_Phone
+    print(mobile)
     random_nr = random.randint(1,12)
     user = {'nickname': 'Katalonne'}  # fake user
     posts = [  # fake array of posts
