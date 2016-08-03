@@ -24,23 +24,31 @@
   <meta name="description" content="My business card website">
   <meta name="keywords" content="HTML,CSS,XML,JavaScript,CB,Developer,Frontend,Backend">
   <meta name="author" content="Catalin Besleaga">
-  
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-  <link rel="stylesheet" href="/static/css/index/index.css">
 
+  <link rel="stylesheet" href="/static/css/index/index.css"> {% if mobile == False %}
+  <link rel="stylesheet" href="/static/css/index/hover_desktop.css"> {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 
 <body>
   <input type="checkbox" name="input_info" id="info_label">
+  <input type="checkbox" name="input_contact" id="contact_label">
+
 
   <label for="info_label" class='info_label_class' onclick=""></label>
   <label for="info_label" class='home_label_class' onclick=""></label>
+  <label for="contact_label" class='contact_label_class' onclick=""></label>
 
 
   <div id='main' style="background-image: url('/static/images/bg-image{{random_nr}}.jpg')">
-  <div id='main'>
-    <!--{{random_nr}}-->
+    <i class="fa fa-times home" aria-hidden="true">
+          <label for="info_label" class='home_label_class' onclick=""></label>
+    </i>
+    
+    <i class="fa fa-times close_contact" aria-hidden="true">
+          <label for="contact_label" class='contact_label_class' onclick=""></label>
+    </i>
+    
     <div class='middle'>
       <div class='logo'>
       </div>
@@ -56,8 +64,12 @@
           <i class='fa fa-info info tooltips' aria-hidden="true">
             <label for="info_label" class='info_label_class' onclick=""></label>
           </i>
+          <i class="fa fa-user user user_tooltips" aria-hidden="true">
+            <label for="contact_label" class='contact_label_class' onclick=""></label>
+          </i>
           <i class="fa fa-code code blog_tooltips" aria-hidden="true"></i>
           <span class='about-tooltip'>About me</span>
+          <span class='user-tooltip'>Contact</span>
           <span class='blog-tooltip'>Coming soon</span>
         </div>
 
@@ -71,10 +83,10 @@
       <div class='blank_circle'>
       </div>
 
-      <div class='about-middle'>
+      <div class='about-middle noselect'>
         <div class='about-text'>
           <p class='who-am-i'>Who am I?</p>
-          <p class='about-me'>
+          <p class='about-me '>
             I'm a young Front End Developer based in Moldova who focuses on writing clean, elegant, modular and efficient code.
           </p>
         </div>
@@ -116,12 +128,43 @@
 
         </div>
 
-        <i class="fa fa-times home" aria-hidden="true">
-          <label for="info_label" class='home_label_class' onclick=""></label>
-        </i>
+
       </div>
 
     </div>
+
+
+    <div class='contact'>
+      <div class='contact-types-container'>
+        <div class='contact-types'>
+          <i class="fa fa-facebook facebook" aria-hidden="true"></i>
+          <p class='contact-text'>
+            <a href="https://www.facebook.com/cattalinbesleaga" target="_blank" class='facebook-link'>
+            Contact
+            </a>
+          </p>
+        </div>
+        <div class='contact-types'>
+          <i class="fa fa-skype skype" aria-hidden="true"></i>
+          <p class='contact-text'>
+            <a href="skype:catalinbesleaga98?chat" class='skype-link'>
+            Contact
+            </a>
+          </p>
+        </div>
+        <div class='contact-types'>
+          <i class="fa fa-envelope envelope" aria-hidden="true"></i>
+          <p class='contact-text'>
+            <a href="mailto:catalinbesleaga98@gmail.com" class='envelope-link'>
+            Contact
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </body>
 
 </html>

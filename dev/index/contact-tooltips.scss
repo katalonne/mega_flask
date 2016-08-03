@@ -1,8 +1,8 @@
-.blog_tooltips {
+.user_tooltips {
   position: relative;
   // display: inline;
 } 
-.blog_tooltips ~ .blog-tooltip {
+.user_tooltips ~ .user-tooltip {
   position: absolute;
   width:120px;
   color: #FFFFFF;
@@ -15,7 +15,7 @@
   // border:1px solid red; 
   
 }
-.blog_tooltips ~ .blog-tooltip:after {
+.user_tooltips ~ .user-tooltip:after {
   content: '';
   position: absolute;
   top: 100%;
@@ -26,19 +26,25 @@
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
 }
-.blog_tooltips:hover ~ .blog-tooltip{
-  position: absolute;
+
+// .user_tooltips:hover ~ .user-tooltip{
+//   position: absolute;
   
-  visibility: visible;
-  opacity: 0.75;
-  bottom:47px;
-  // bottom: -30px;
-  left: 50%;
-  transform: translate(calc(-50% + 50px),0);
-  // margin-left: -76px;
-  z-index: 999;
+//   visibility: visible;
+//   opacity: 0.75;
+//   bottom:47px;
+//   // bottom: -30px;
+//   left: 50%;
+//   transform: translate(-50%,0);
+//   // margin-left: -76px;
+//   z-index: 999;
+// }
+
+.user-tooltip{
+  color:white;
 }
 
-.blog-tooltip{
-  color:white;
+
+.user-tooltip{
+  display:none;
 }

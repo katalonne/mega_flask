@@ -1,9 +1,9 @@
 @keyframes position_fixed {
-    from {
-        postion:absolute;
+    0% {
+        // postion:absolute;
         opacity:0;
     }
-    to {
+    100%{
         position:fixed;
         opacity:1;
     }
@@ -109,6 +109,27 @@
         transform: translateX(0%)
     }
 }
+
+@keyframes user {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-300%);
+        -moz-transform: translateY(-300%);
+        -ms-transform: translateY(-300%);
+        -o-transform: translateY(-300%);
+        transform: translateY(-300%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%)
+    }
+}
+
+
 
 @keyframes code {
     0% {

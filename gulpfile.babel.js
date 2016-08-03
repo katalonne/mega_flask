@@ -28,14 +28,15 @@ gulp.task('build:html', () => {
     ], {
 
         })
-        .pipe($.htmlmin({collapseWhitespace:true}))
+        // .pipe($.htmlmin({collapseWhitespace:true}))
         .pipe(gulp.dest(`${appDir}/static/html/`))
         .pipe(browserSync.reload({ stream: true }));
 })
 
 gulp.task('build:scss', () => {
     return gulp.src([
-        `${devDir}/**/index.scss`
+        `${devDir}/**/index.scss`,
+        `${devDir}/**/hover_desktop.scss`,
     ])
         .pipe($.plumber({
             errorHandler: function (error) {
@@ -83,7 +84,7 @@ gulp.task('serve', ['Run:Python:Server'], () => {
         // server: {
         //     baseDir: "./app/"
         // }
-        proxy: "localhost:4000"
+        proxy: "192.168.1.68:4000"
     });
 
     gulp.watch(`${devDir}/**/*.html`, ['build:html'])

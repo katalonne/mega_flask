@@ -1,0 +1,37 @@
+.tooltips:hover ~ .about-tooltip{
+  position: absolute;
+  
+  visibility: visible;
+  opacity: 0.75;
+  bottom:47px;
+  // bottom: -30px;
+  left: 50%;
+  transform: translate(calc(-50% - 50px),0);
+  // margin-left: -76px;
+  z-index: 999;
+}
+
+
+.about-tooltip{
+    display:inline;
+}
+
+
+////////////////////////////////////////////////
+
+.user_tooltips:hover ~ .user-tooltip{
+  position: absolute;
+  
+  visibility: visible;
+  opacity: 0.75;
+  bottom:47px;
+  // bottom: -30px;
+  left: 50%;
+  transform: translate(-50%,0);
+  // margin-left: -76px;
+  z-index: 999;
+}
+
+.user-tooltip{
+  display:inline;
+}
