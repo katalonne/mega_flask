@@ -75,7 +75,7 @@ gulp.task('build:scss', () => {
 
 
 gulp.task('Run:Python:Server', ['build:html', 'build:scss'], () => {
-    return cp.exec('python run.py');
+    return cp.exec('python wsgi.py');
 });
 
 
@@ -84,7 +84,7 @@ gulp.task('serve', ['Run:Python:Server'], () => {
         // server: {
         //     baseDir: "./app/"
         // }
-        proxy: "192.168.0.69:4000"
+        proxy: "192.168.1.68:4000"
     });
 
     gulp.watch(`${devDir}/**/*.html`, ['build:html'])

@@ -38,6 +38,10 @@
                                   not supported by any browser */
 }
 
+body{
+    overflow:hidden;
+}
+
 .row {
     margin: 0;
 }
@@ -575,7 +579,7 @@ input {
         position: relative;
         margin: 0 auto;
         width: 330px;
-        height: 100%;
+        height: 100vh;
         // border:1px solid red;
         .logo {
             // opacity: 0.2;
