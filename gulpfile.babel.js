@@ -84,7 +84,7 @@ gulp.task('serve', ['Run:Python:Server'], () => {
         // server: {
         //     baseDir: "./app/"
         // }
-        proxy: "192.168.1.68:4000"
+        proxy: "192.168.0.69:4000"
     });
 
     gulp.watch(`${devDir}/**/*.html`, ['build:html'])
